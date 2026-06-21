@@ -22,6 +22,7 @@
     .mob-badge-rt, .mob-badge-bl { display: none !important; }
     .mob-brands { padding: 16px 20px !important; }
     #services { padding: 70px 20px !important; }
+    .mob-svc-bg, .mob-svc-overlay, .mob-svc-watermark { display: none !important; }
     .mob-svc-hdr { grid-template-columns: 1fr !important; gap: 24px !important; }
     .mob-bento { grid-template-columns: 1fr !important; }
     .mob-bento > div { grid-column: auto !important; grid-row: auto !important; }
@@ -322,11 +323,11 @@
 <!-- ═══ SERVICES ═══ -->
 <section id="services" style="padding:120px 52px;background:#F7F3EE;position:relative;overflow:hidden;">
   <!-- Background image -->
-  <div style="position:absolute;inset:0;background-image:url('uploads/pasted-1782067397979-0.png');background-size:cover;background-position:center;pointer-events:none;"></div>
+  <div class="mob-svc-bg" style="position:absolute;inset:0;background-image:url('uploads/pasted-1782067397979-0.png');background-size:cover;background-position:center;pointer-events:none;"></div>
   <!-- Overlay -->
-  <div style="position:absolute;inset:0;background:rgba(247,243,238,0.87);pointer-events:none;"></div>
+  <div class="mob-svc-overlay" style="position:absolute;inset:0;background:rgba(247,243,238,0.87);pointer-events:none;"></div>
   <!-- Giant watermark -->
-  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Barlow Condensed',sans-serif;font-size:300px;font-weight:900;color:rgba(0,0,0,0.028);white-space:nowrap;pointer-events:none;user-select:none;letter-spacing:-12px;line-height:1;">SERVICES</div>
+  <div class="mob-svc-watermark" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Barlow Condensed',sans-serif;font-size:300px;font-weight:900;color:rgba(0,0,0,0.028);white-space:nowrap;pointer-events:none;user-select:none;letter-spacing:-12px;line-height:1;">SERVICES</div>
 
   <div style="max-width:1280px;margin:0 auto;position:relative;">
 
