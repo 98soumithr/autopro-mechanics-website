@@ -4,6 +4,45 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
+<style>
+  .mob-hamburger { display: none; }
+  .mob-menu { display: none; position: fixed; top: 70px; left: 0; right: 0; z-index: 999;
+    background: rgba(247,243,238,0.98); backdrop-filter: blur(24px);
+    border-bottom: 1px solid rgba(0,0,0,0.08); padding: 20px 20px 28px;
+    flex-direction: column; gap: 0; }
+  .mob-menu.is-open { display: flex; }
+  @media (max-width: 768px) {
+    nav { padding: 0 18px !important; }
+    .mob-nav-links { display: none !important; }
+    .mob-nav-phone { display: none !important; }
+    .mob-hamburger { display: flex !important; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 6px; margin-left: 12px; }
+    .mob-hero-grid { grid-template-columns: 1fr !important; padding: 40px 20px 60px !important; gap: 32px !important; }
+    .mob-hero-img { aspect-ratio: 4/3 !important; }
+    .mob-badge-rt, .mob-badge-bl { display: none !important; }
+    .mob-brands { padding: 16px 20px !important; }
+    #services { padding: 70px 20px !important; }
+    .mob-svc-hdr { grid-template-columns: 1fr !important; gap: 24px !important; }
+    .mob-bento { grid-template-columns: 1fr !important; }
+    .mob-bento > div { grid-column: auto !important; grid-row: auto !important; }
+    .mob-engine { min-height: 260px !important; }
+    #about { padding: 70px 20px !important; }
+    .mob-about-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+    .mob-about-vis { padding-bottom: 0 !important; padding-right: 0 !important; }
+    .mob-about-photo { aspect-ratio: 16/9 !important; }
+    .mob-about-stat, .mob-about-team { display: none !important; }
+    #process { padding: 70px 20px !important; }
+    .mob-steps { grid-template-columns: repeat(2,1fr) !important; }
+    #testimonials { padding: 70px 20px !important; }
+    .mob-reviews { grid-template-columns: 1fr !important; }
+    .mob-feat-rev { transform: none !important; }
+    #contact { padding: 50px 16px !important; }
+    .mob-contact-card { grid-template-columns: 1fr !important; padding: 28px 20px !important; gap: 32px !important; }
+    .mob-name-grid { grid-template-columns: 1fr !important; }
+    footer { padding: 48px 20px 32px !important; }
+    .mob-footer-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
+  }
+</style>
 </head>
 <body>
 <x-dc>
@@ -147,7 +186,7 @@
 
     <!-- Right — Mechanic Photo -->
     <div style="position:relative;padding-bottom:24px;">
-      <div style="border-radius:20px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,0.1),0 0 0 1px rgba(0,0,0,0.06);animation:float 7s ease-in-out infinite;position:relative;aspect-ratio:3/4;">
+      <div class="mob-hero-img" style="border-radius:20px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,0.1),0 0 0 1px rgba(0,0,0,0.06);animation:float 7s ease-in-out infinite;position:relative;aspect-ratio:3/4;">
         <img src="uploads/pasted-1782067940685-0.png" alt="Auto mechanic at work" style="width:100%;height:100%;object-fit:cover;display:block;object-position:center top;" />
         <div style="position:absolute;bottom:0;left:0;right:0;height:60%;background:linear-gradient(to top,rgba(12,10,8,0.92),transparent);pointer-events:none;"></div>
         <!-- Stats overlaid -->
@@ -437,7 +476,7 @@
 
     <!-- Left visual -->
     <div class="mob-about-vis" style="position:relative;padding-bottom:24px;padding-right:24px;">
-      <div style="border-radius:20px;overflow:hidden;box-shadow:0 20px 56px rgba(0,0,0,0.09),0 0 0 1px rgba(0,0,0,0.06);position:relative;aspect-ratio:4/3;">
+      <div class="mob-about-photo" style="border-radius:20px;overflow:hidden;box-shadow:0 20px 56px rgba(0,0,0,0.09),0 0 0 1px rgba(0,0,0,0.06);position:relative;aspect-ratio:4/3;">
         <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=900&q=80" alt="Mechanic working on engine" style="width:100%;height:100%;object-fit:cover;display:block;" />
         <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(12,10,8,0.55) 0%,transparent 55%);pointer-events:none;"></div>
         <div style="position:absolute;bottom:18px;left:18px;background:rgba(255,255,255,0.96);backdrop-filter:blur(14px);border:1px solid rgba(0,0,0,0.09);border-radius:10px;padding:10px 16px;display:flex;align-items:center;gap:10px;">
@@ -449,12 +488,12 @@
         </div>
       </div>
       <!-- Stat pill -->
-      <div style="position:absolute;bottom:0;right:0;background:linear-gradient(135deg,#FF5500,#FF8030);border-radius:16px;padding:20px 24px;box-shadow:0 12px 36px rgba(255,85,0,0.38);">
+      <div class="mob-about-stat" style="position:absolute;bottom:0;right:0;background:linear-gradient(135deg,#FF5500,#FF8030);border-radius:16px;padding:20px 24px;box-shadow:0 12px 36px rgba(255,85,0,0.38);">
         <div style="font-family:'Barlow Condensed',sans-serif;font-size:42px;font-weight:900;color:#fff;line-height:1;">20+</div>
         <div style="font-size:12px;color:rgba(255,255,255,0.8);font-weight:500;margin-top:4px;">Years fixing<br/>cars right</div>
       </div>
       <!-- Team photos -->
-      <div style="position:absolute;top:14px;right:0;background:#FFFFFF;border:1px solid rgba(0,0,0,0.09);border-radius:12px;padding:10px 14px;display:flex;flex-direction:column;align-items:center;gap:6px;box-shadow:0 4px 16px rgba(0,0,0,0.07);">
+      <div class="mob-about-team" style="position:absolute;top:14px;right:0;background:#FFFFFF;border:1px solid rgba(0,0,0,0.09);border-radius:12px;padding:10px 14px;display:flex;flex-direction:column;align-items:center;gap:6px;box-shadow:0 4px 16px rgba(0,0,0,0.07);">
         <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=60&q=80" alt="Tech" style="width:34px;height:34px;border-radius:50%;object-fit:cover;border:2px solid #141210;box-shadow:0 2px 6px rgba(0,0,0,0.07);" />
         <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=60&q=80" alt="Tech" style="width:34px;height:34px;border-radius:50%;object-fit:cover;border:2px solid #141210;box-shadow:0 2px 6px rgba(0,0,0,0.07);" />
         <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=60&q=80" alt="Tech" style="width:34px;height:34px;border-radius:50%;object-fit:cover;border:2px solid #141210;box-shadow:0 2px 6px rgba(0,0,0,0.07);" />
